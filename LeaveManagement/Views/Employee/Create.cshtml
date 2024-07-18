@@ -1,0 +1,74 @@
+﻿@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<section class="container ml-[100px] my-28">
+    <div>
+        <h1 class="text-3xl font-bold text-blue-600">Register Employee</h1>
+        <p>Welcome to Vale, Put your money to work. It's free to sign up for a Vale </p>
+    </div>
+    <div class="mt-14">
+        <form asp-controller="Employee" asp-action="Store" method="post">
+            <div class="mt-5">
+                <label for="FirstName" class="font-bold text-sm">First Name</label>
+                <input asp-for="FirstName" type="text" placeholder="Enter First Name" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="LastName" class="font-bold text-sm">Last Name</label>
+                <input asp-for="LastName" type="text" placeholder="Enter Last Name" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="Email" class="font-bold text-sm">Email</label>
+                <input asp-for="Email" type="text" placeholder="Enter your Email" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="Address" class="font-bold text-sm">Address</label>
+                <input asp-for="Address" type="text" placeholder="Enter Your Address" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+                  <div class="mt-5">
+                <label for="DateOfBirth" class="font-bold text-sm">DateOfBirth</label>
+                <input asp-for="DateOfBirth" type="date" placeholder="Enter Your DateOfBirth" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="Department" class="font-bold text-sm">Department</label>
+                <input asp-for="Department" type="text" placeholder="Enter Your Department" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="Role" class="font-bold text-sm">Role</label>
+                <input asp-for="Role"  type="text" placeholder="Enter Role" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="PhoneNo" class="font-bold text-sm">Phone Number</label>
+                <input asp-for="PhoneNo"  type="text" placeholder="Enter Phone Number" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+              <div class="mt-5">
+                    <label for="Password" class="font-bold text-lg">Password</label>
+                    <input asp-for="Password" type="password" placeholder="Enter your Password" class="mt-2 block w-1/2 rounded-md border-0 py-2.5 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+                </div>
+                  <div class="mt-5">
+                    <label for="ConfirmPassword" class="font-bold text-lg">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" type="password" placeholder="Enter your Password" class="mt-2 block w-1/2 rounded-md border-0 py-2.5 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+                </div>
+            <div class="mt-10">
+                <button class="block w-1/2 rounded-md bg-blue-600 text-white py-2.5 ">Submit</button>
+            </div       
+        </form>
+    </div>
+
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

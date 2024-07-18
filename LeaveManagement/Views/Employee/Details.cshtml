@@ -1,0 +1,30 @@
+﻿@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">FirstName</dt>
+        <dd class="col-sm-10">@Model.FirstName</dd>
+        <dt class="col-sm-2">lastName</dt>
+        <dd class="col-sm-10">@Model.LastName</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+        <dt class="col-sm-2">PhoneNo</dt>
+        <dd class="col-sm-10">@Model.PhoneNo</dd>
+        <dt class="col-sm-2">Address</dt>
+        <dd class="col-sm-10">@Model.Address</dd>
+        <dt class="col-sm-2">Role</dt>
+        <dd class="col-sm-10">@Model.Role</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

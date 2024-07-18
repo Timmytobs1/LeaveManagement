@@ -1,0 +1,52 @@
+﻿@model LeaveRequestViewModel
+
+@{
+    ViewData["Title"] = "";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h2>@ViewData["Title"]</h2>
+<section class="container ml-[100px] my-28">
+    <div>
+        <h1 class="text-3xl font-bold text-blue-600">Leave Request</h1>
+        <p>Welcome to Vale, Apply for leave </p>
+    </div>
+    <div class="mt-14">
+        <form asp-controller="LeaveRequest" asp-action="Create" method="post">
+            <div class="mt-5">
+                <label for="EmployeeId" class="font-bold text-sm">Employee Id</label>
+                <input asp-for="EmployeeId" type="text" placeholder="Enter Your Employee Id" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="StartDate" class="font-bold text-sm">Start Date</label>
+                <input asp-for="StartDate" type="date" placeholder="Enter Start Date" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="EndDate" class="font-bold text-sm">EndDate</label>
+                <input asp-for="EndDate" type="date" placeholder="Enter End Date" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-5">
+                <label for="LeaveType" class="font-bold text-sm">Leave Type</label>
+                <input asp-for="LeaveType" type="text" placeholder="Enter Leave Type" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+                  <div class="mt-5">
+                <label for="Reason" class="font-bold text-sm">Reason</label>
+                <input asp-for="Reason" type="text" placeholder="Enter Reason For Leave" class="mt-2 block w-1/2 rounded-md border-0 py-2 pl-4 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6 bg-slate-100">
+            </div>
+            <div class="mt-10">
+                <button class="block w-1/2 rounded-md bg-blue-600 text-white py-2.5 ">Submit</button>
+            </div       
+        </form>
+    </div>
+
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
